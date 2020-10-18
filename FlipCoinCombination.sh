@@ -59,3 +59,51 @@ echo ${coin2[@]}
 echo | awk '{print 1/8  }'
 
 
+#! /bin/bash
+declare -A coin3
+coin3[random1]="h"
+coin3[random2]="t"
+
+coin3[random3]="hh"
+coin3[random4]="ht"
+coin3[random5]="th"
+coin3[random6]="tt"
+
+coin3[random7]="hhh"
+coin3[random8]="hht"
+coin3[random9]="hth"
+coin3[random10]="htt"
+coin3[random11]="thh"
+coin3[random12]="tht"
+coin3[random13]="tth"
+coin3[random14]="ttt"
+
+echo ${coin3[@]}
+
+for el in "${coin3[@]}"
+do
+        echo "$el"
+done | sort  -nr
+dictionary=( $(
+      for el in ${coin3[@]}
+      do
+        echo $el
+      done | sort -nr) )
+
+echo ${dictionary[@]}
+
+for el in "${coin3[@]}"
+do
+        echo "$el"
+done | sort  -n
+dictionary=( $(
+      for el in ${coin3[@]}
+      do
+        echo $el
+      done | sort -n) )
+
+echo ${dictionary[@]}
+ winner1=${coin3[random7]}
+ winner2=${coin3[random14]}
+echo  "winning combinations are:$winner1 and $winner2"
+
