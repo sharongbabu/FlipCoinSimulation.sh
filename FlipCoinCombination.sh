@@ -40,4 +40,22 @@ echo | awk '{print 1/4  }'
 
 
 
+#! /bin/bash
+declare -A coin2
+i=0
+while [ $i -le 8 ]
+do
+coin2[random1]="hhh"
+coin2[random2]="hht"
+coin2[random3]="hth"
+coin2[random4]="htt"
+coin2[random5]="thh"
+coin2[random6]="tht"
+coin2[random7]="tth"
+coin2[random8]="ttt"
+i=$(( $i +1 ))
+done
+echo ${coin2[@]}
+echo | awk '{print 1/8  }'
+
 
